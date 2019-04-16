@@ -34,5 +34,19 @@ describe Enumerable do
     end
   end
 
+  describe "#my_none?" do 
+    it "returns true if none of the elements meet the block condition" do
+      answer = array.my_none? { |element| element == 100 }
+      expect(answer).to be true
+    end
+  end
+
+  describe "#my_count" do
+    it "returns a count of how many elements meet the block condition" do
+      answer = array.my_count? { |element| element <= 12 }
+      expect(answer).to eq(3)
+    end
+  end
+
 
 end
