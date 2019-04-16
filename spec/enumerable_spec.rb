@@ -1,8 +1,8 @@
 require "./enumerable.rb"
 
 describe Enumerable do
-  array = [10,25,12,6,13,17] 
-  answer = []
+  let(:array) { [10,25,12,6,13,17] } 
+  let(:answer) { [] }
   describe "#my_each" do
     it "returns each of the items of the array" do
       array.my_each {|n| answer << n}
