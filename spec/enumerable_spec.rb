@@ -17,4 +17,22 @@ describe Enumerable do
       expect(answer).to eql([10,0,25,1,12,2,6,3,13,4,17,5])
     end
   end
+  
+  describe "#my_select" do 
+    it "returns an array of all even numbers in the array passed to it" do
+      expect(array.my_select {|n| n.even? }).to eql([10,12,6])
+    end
+    it "it returns an array of strings that are less than 5" do
+      expect(["thief","fox","pen","umbrella","pencil"].my_select {|w| w.length < 5}).to eql(["fox","pen"])
+    end
+  end
+
+  describe "#my_all?" do
+    it "it passes the my_all? method a block and evalutes to true if the block passes or false if not" do
+      answer = array.my_all? {|n| n < 30}
+      expect(answer).to be true
+    end
+  end
+
+
 end
